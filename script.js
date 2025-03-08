@@ -4,18 +4,23 @@ function toggleWishesPopup() {
     popup.classList.toggle("show");
 }
 
-// Funkcja do wybuchu tortu
 function explodeCake() {
     const cake = document.querySelector(".cake");
     const wishes = document.getElementById("wishes");
-    
+
+    // Odtworzenie dźwięków
+    document.getElementById("confettiSound").play();
+    setTimeout(() => {
+        document.getElementById("birthdaySong").play();
+    }, 1000); // Opóźnienie, by zaczęło grać po efekcie
+
     // Animacja wybuchu tortu
     cake.style.animation = "explode 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards";
-    
-    // Confetti z tortu (30 cząstek)
-    createConfetti(300, { 
-        x: cake.offsetLeft + cake.offsetWidth / 2, 
-        y: cake.offsetTop + cake.offsetHeight / 2 
+
+    // Konfetti
+    createConfetti(300, {
+        x: cake.offsetLeft + cake.offsetWidth / 2,
+        y: cake.offsetTop + cake.offsetHeight / 2
     }, 2000);
 
     // Animacja tekstu
@@ -23,7 +28,7 @@ function explodeCake() {
         cake.style.display = "none";
         wishes.classList.add("show");
         document.querySelector("#personalWish").textContent = "Dla Ciebie Iza! 🍾";
-        document.querySelector("#wishes p").textContent = 
+        document.querySelector("#wishes p").textContent =
             "W tym dniu twoich 16 urodzin chciałbym ci życzyć wszystkiego co najlepsze - szczęścia, spełnienia marzeń, zdrowia oraz dalszej tułaczki ze mną u boku.";
     }, 1000);
 }
