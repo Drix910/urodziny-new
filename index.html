@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wszystkiego Najlepszego!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Wszystkiego Najlepszego! 🎂</h1>
+        <div class="cake" onclick="explodeCake()">🎂</div>
+        <div id="wishes" class="hidden">
+            <h2 id="personalWish"></h2>
+            <p></p>
+            <button onclick="startConfetti(event)">🎊 Świętuj! 🎊</button>
+        </div>
+    </div>
+
+    <!-- Róża w rogu -->
+    <div class="rose" onclick="toggleWishesPopup()">🌹</div>
+
+    <!-- Okienko z życzeniami na Dzień Kobiet -->
+    <div id="wishesPopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" onclick="toggleWishesPopup()">&times;</span>
+            <h2>💐Z okazji Dnia Kobiet!</h2>
+            <p>💐Wszytskiego najlepszego z okazji dnia kobiet</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
